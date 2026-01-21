@@ -1,22 +1,23 @@
 {
-  "name": "udg-pre-plan-desktop",
-  "version": "1.0.0",
+  "name": "preplan-checker-cgpt",
+  "version": "1.2.0",
   "private": true,
   "type": "module",
-  "description": "UDG Pre-Plan Submission Checker (Durban/eThekwini) - Desktop-friendly single-process web app",
+  "description": "UDG Pre-Plan Submission Checker - single process (server serves UI + API), hardened fetch, zoning-driven feasibility.",
   "engines": {
     "node": ">=20"
   },
   "scripts": {
-    "start": "node server/index.js",
-    "dev": "node server/index.js",
-    "test:smoke": "node server/smoke_test.js"
+    "start": "node --use-system-ca server/index.js",
+    "dev": "node --use-system-ca server/index.js",
+    "test:smoke": "node server/smoke_test.js",
+    "oneclick:win": "node --use-system-ca server/index.js"
   },
   "dependencies": {
     "express": "^4.19.2",
     "fs-extra": "^11.2.0",
     "pdfkit": "^0.15.0",
     "pino": "^9.3.2",
-    "sharp": "^0.33.4"
+    "win-ca": "^3.6.0"
   }
 }
